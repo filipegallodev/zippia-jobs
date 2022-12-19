@@ -110,7 +110,7 @@ const Jobs = ({ data }: any) => {
 // This gets called on every request
 export async function getServerSideProps() {
   // Fetch data from external API
-  const response = await fetch("http://localhost:3333/jobs");
+  const response = await fetch("https://zippia-jobs-production.up.railway.app/jobs");
   const data = await response.json();
 
   // Pass data to the page via props
