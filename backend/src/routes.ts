@@ -3,7 +3,7 @@ import cors from "cors";
 import axios from "axios";
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: process.env.CORS_ORIGIN,
 };
 
 const routes = express();
@@ -25,10 +25,7 @@ routes.get("/jobs", cors(corsOptions), async (req: Request, res: Response) => {
     numJobs: 20,
     previousListingHashes: [],
   });
-  // const data = JSON.stringify(response);
-  console.log(response.data);
-
-  res.send(response.data);
+  res.send(response.data).status(200);
 });
 
 export default routes;
