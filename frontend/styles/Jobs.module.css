@@ -1,13 +1,21 @@
+.mainContainer {
+  margin: 0 32px;
+}
+
 .filterContainer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin: 32px;
+  gap: 16px;
 }
 
 .filterContainer select {
   padding: 8px;
   font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 4px;
 }
 
 .jobsContainer {
@@ -19,6 +27,7 @@
 
 .jobsContainer li {
   background-color: #151515;
+  height: 180px;
   max-width: 1000px;
   display: grid;
   grid-template-columns: 240px 1fr 120px;
@@ -34,6 +43,17 @@
   border: 1px solid #85e;
 }
 
+.jobsContainer li h3 {
+  color: #cdadff;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.jobsContainer li span {
+  font-size: 1.025rem;
+  font-style: italic;
+}
+
 .jobsContainer li button {
   background-color: #85e;
   border: none;
@@ -41,9 +61,30 @@
   align-self: flex-end;
   padding: 8px;
   cursor: pointer;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 .jobsContainer li button:hover {
   background-color: #a7f;
+}
+
+.endList {
+  text-align: center;
+  margin: 32px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+  .jobsContainer li {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .jobsContainer li button {
+    padding: 12px 38px;
+  }
 }

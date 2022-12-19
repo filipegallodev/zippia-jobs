@@ -43,7 +43,7 @@ const Jobs = ({ data }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.mainContainer}>
+      <main className={styles.mainContainer + " animeLeft"}>
         {data.jobs ? (
           <>
             <div className={styles.filterContainer}>
@@ -98,6 +98,7 @@ const Jobs = ({ data }: any) => {
                       )
                       .filter((e: any, k: any) => k < 10)}
               </ul>
+              <p className={styles.endList}>End of list</p>
             </div>
           </>
         ) : null}
