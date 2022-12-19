@@ -1,8 +1,11 @@
 import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 import JobCard from "../../components/Jobs/JobCard";
 
 import styles from "../../styles/Jobs.module.css";
+
+import zippiaLogo from "../../public/zippia-logo.png";
 
 const Jobs = ({ data }: any) => {
   const [filteredJobs, setFilteredJobs] = React.useState<any>();
@@ -46,6 +49,10 @@ const Jobs = ({ data }: any) => {
       <main className={styles.mainContainer + " animeLeft"}>
         {data.jobs ? (
           <>
+            <div className={styles.zippiaLogo}>
+              <Image src={zippiaLogo} alt="Zippia Logo" />
+            </div>
+            <h2>Filters</h2>
             <div className={styles.filterContainer}>
               <select onChange={({ target }) => setFilterCompany(target.value)}>
                 <option defaultChecked>All companies</option>
@@ -61,6 +68,7 @@ const Jobs = ({ data }: any) => {
               </select>
             </div>
             <div>
+              <h2>Results</h2>
               <ul className={styles.jobsContainer}>
                 {filteredJobs
                   ? filteredJobs.map(
@@ -110,7 +118,9 @@ const Jobs = ({ data }: any) => {
 // This gets called on every request
 export async function getServerSideProps() {
   // Fetch data from external API
-  const response = await fetch("http://localhost:3333/jobs");
+  const response = await fetch(
+    "https://zippia-jobs-production.up.railway.app/jobs"
+  );
   const data = await response.json();
 
   // Pass data to the page via props

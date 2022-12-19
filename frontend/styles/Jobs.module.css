@@ -2,12 +2,24 @@
   margin: 0 32px;
 }
 
+.zippiaLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zippiaLogo img {
+  max-width: 320px;
+  height: auto;
+  margin: 64px;
+}
+
 .filterContainer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 32px;
+  /* margin: 32px; */
   gap: 16px;
 }
 

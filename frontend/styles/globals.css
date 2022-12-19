@@ -36,3 +36,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+h2 {
+  margin: 32px 0;
+  width: 100%;
+  font-size: 1.75rem;
+  text-align: center;
+  text-transform: uppercase;
+}
