@@ -1,0 +1,49 @@
+.filterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px;
+}
+
+.filterContainer select {
+  padding: 8px;
+  font-size: 1.125rem;
+}
+
+.jobsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.jobsContainer li {
+  background-color: #151515;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 240px 1fr 120px;
+  padding: 24px;
+  gap: 32px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+.jobsContainer li:hover {
+  border: 1px solid #85e;
+}
+
+.jobsContainer li button {
+  background-color: #85e;
+  border: none;
+  border-radius: 4px;
+  align-self: flex-end;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.jobsContainer li button:hover {
+  background-color: #a7f;
+}
