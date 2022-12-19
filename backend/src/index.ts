@@ -2,7 +2,7 @@ import express from "express";
 import routes from "./routes";
 
 // A porta é fornecida pela Railway
-const port = 3333;
+const port = process.env.PORT || 3333;
 const server = express();
 
 server.use(express.json());
